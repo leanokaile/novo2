@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Letter For You</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      width: 300px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px gray;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #5a67d8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="name" placeholder="Your name">
+
+    <h2>Password</h2>
+    <input type="password" id="password" placeholder="Your password">
+
+    <br><br>
+    <button onclick="checkLogin()">Open Letter</button>
+
+    <p id="error"></p>
+  </div>
+
+  <script>
+    function checkLogin() {
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("password").value;
+
+      if (name === "Anna" && password === "rose123") {
+        window.location.href = "";
+      }
+      else if (name === "John" && password === "blue456") {
+        window.location.href = "letter-john.html";
+      }
+      else {
+        document.getElementById("error").innerText = "Incorrect name or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
